@@ -214,7 +214,8 @@ nav.scrolled {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.8rem;
+  gap: 1.2rem;
+  padding: 2rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -222,13 +223,14 @@ nav.scrolled {
 .mob-menu.open { opacity: 1; visibility: visible; }
 .mob-menu a {
   font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
   color: var(--text);
   text-decoration: none;
   letter-spacing: 0.06em;
   transition: color 0.3s;
   position: relative;
+  padding: 0.6rem 1.2rem;
 }
 .mob-menu a:hover { color: var(--gold); }
 
@@ -670,16 +672,24 @@ section { position: relative; z-index: 1; }
 }
 .proj-thumb-1 { background: linear-gradient(135deg, #070B14 0%, #0F1E3A 100%); }
 .proj-thumb-2 { background: linear-gradient(135deg, #0A0F07 0%, #162B10 100%); }
-.proj-thumb-3 { background: linear-gradient(135deg, #0F080A 0%, #2B0F18 100%); }
+.proj-thumb-3 { background: linear-gradient(135deg, #070B14 0%, #0F1E3A 100%); }
 
-.proj-thumb-icon { position: relative; z-index: 2; }
+.proj-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.proj-thumb-icon { position: relative; z-index: 3; }
 
 .proj-thumb::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0; height: 60%;
   background: linear-gradient(to bottom, transparent, rgba(10,12,18,0.9));
-  z-index: 1;
+  z-index: 2;
 }
 
 .proj-chip {
@@ -1272,11 +1282,12 @@ footer strong { color: var(--gold); font-weight: 400; }
 
       <div class="proj-card reveal reveal-delay-1">
         <div class="proj-thumb proj-thumb-1">
+          <img src="images/web_desa.jpg" alt="Web Desa Project" class="proj-image" />
           <span class="proj-thumb-icon">🛒</span>
           <span class="proj-chip">UMKM</span>
         </div>
         <div class="proj-body">
-          <h3 class="proj-title">Luxe Store</h3>
+          <h3 class="proj-title">Web Desa</h3>
           <p class="proj-desc">Platform e-commerce untuk UMKM dengan fitur unggulan.</p>
           <div class="proj-stack">
             <span class="stack-tag">React</span>
@@ -1288,23 +1299,26 @@ footer strong { color: var(--gold); font-weight: 400; }
         </div>
       </div>
 
-      <div class="proj-card reveal reveal-delay-2">
-        <div class="proj-thumb proj-thumb-2">
-          <span class="proj-thumb-icon">📊</span>
-          <span class="proj-chip">Dashboard</span>
+            <div class="proj-card reveal reveal-delay-1">
+        <div class="proj-thumb proj-thumb-1">
+          <img src="images/web_ojek.jpg" alt="Web Transportasi Project" class="proj-image" />
+          <span class="proj-thumb-icon">🚕</span>
+          <span class="proj-chip">Transportasi</span>
         </div>
         <div class="proj-body">
-          <h3 class="proj-title">Data Tentang Desa</h3>
-          <p class="proj-desc">Dashboard untuk menampilkan data statistik tentang desa.</p>
+          <h3 class="proj-title">Web transportasi online</h3>
+          <p class="proj-desc">Platform untuk memesan transportasi online dengan antarmuka yang mudah digunakan.</p>
           <div class="proj-stack">
-            <span class="stack-tag">Vue.js</span>
-            <span class="stack-tag">D3.js</span>
-            <span class="stack-tag">Laravel</span>
-            <span class="stack-tag">WebSocket</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">MongoDB</span>
+            <span class="stack-tag">Stripe</span>
           </div>
-          <a href="https://dianramadani0906-ops.github.io/tugasdesa/" target="_blank" class="proj-link">Lihat Detail →</a>
+          <a href="https://dianramadani0906-ops.github.io/ojol/" target="_blank" class="proj-link">Lihat Detail →</a>
         </div>
-      </div>
+      */
+
+
 
 
     </div>
@@ -1388,29 +1402,29 @@ footer strong { color: var(--gold); font-weight: 400; }
     <div class="doc-grid">
       <div class="doc-card reveal reveal-delay-1">
         <div class="doc-image" style="background-image: url('images/foto.jpg'); background-size: cover; background-position: center; width: 100%; height: 200px; border-radius: 8px;"></div>
-        <h3 class="doc-title">Desain Antarmuka</h3>
-        <p class="doc-desc">Koleksi screenshot desain UI modern dan responsif dari berbagai proyek.</p>
+        <h3 class="doc-title">Depan Halaman</h3>
+        <p class="doc-desc">Dokumentasi di depan halaman kampus.</p>
         <a href="images/foto.jpg" target="_blank" class="doc-link">Lihat Galeri →</a>
       </div>
 
       <div class="doc-card reveal reveal-delay-2">
         <div class="doc-image" style="background-image: url('images/foto1.jpg'); background-size: cover; background-position: center; width: 100%; height: 200px; border-radius: 8px;"></div>
-        <h3 class="doc-title">Mobile Design</h3>
-        <p class="doc-desc">Portfolio desain aplikasi mobile dengan fokus pada user experience yang optimal.</p>
+        <h3 class="doc-title">Berpergian</h3>
+        <p class="doc-desc">Dokumentasi saat ingin mengerjakan project dengan teman.</p>
         <a href="images/foto1.jpg" target="_blank" class="doc-link">Lihat Galeri →</a>
       </div>
 
       <div class="doc-card reveal reveal-delay-3">
         <div class="doc-image" style="background-image: url('images/foto2.jpg'); background-size: cover; background-position: center; width: 100%; height: 200px; border-radius: 8px;"></div>
-        <h3 class="doc-title">Brand Identity</h3>
-        <p class="doc-desc">Dokumentasi proses branding dan identitas visual dari beberapa klien.</p>
+        <h3 class="doc-title">Di cafe</h3>
+        <p class="doc-desc">Dokumentasi saat berada di cafe untuk mengerjakan project.</p>
         <a href="images/foto2.jpg" target="_blank" class="doc-link">Lihat Galeri →</a>
       </div>
 
       <div class="doc-card reveal reveal-delay-4">
         <div class="doc-image" style="background-image: url('images/foto3.jpg'); background-size: cover; background-position: center; width: 100%; height: 200px; border-radius: 8px;"></div>
-        <h3 class="doc-title">Data Visualization</h3>
-        <p class="doc-desc">Koleksi grafis dan visualisasi data interaktif yang telah dikembangkan.</p>
+        <h3 class="doc-title">Halaman Kampus</h3>
+        <p class="doc-desc">Dokumentasi di halaman kampus.</p>
         <a href="images/foto3.jpg" target="_blank" class="doc-link">Lihat Galeri →</a>
       </div>
     </div>
