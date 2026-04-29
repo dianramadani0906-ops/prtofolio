@@ -158,7 +158,7 @@ nav.scrolled {
 }
 
 .nav-links {
-  display: flex; gap: 2.8rem;
+  display: flex; gap: 2.2rem;
   list-style: none;
 }
 .nav-links a {
@@ -249,7 +249,6 @@ nav.scrolled {
   overflow: hidden;
 }
 
-/* Diagonal gold sweep */
 #home::before {
   content: '';
   position: absolute;
@@ -261,7 +260,6 @@ nav.scrolled {
   pointer-events: none;
 }
 
-/* Thin frame lines */
 .hero-frame {
   position: absolute;
   top: 5rem; left: 3rem; right: 3rem; bottom: 3rem;
@@ -333,7 +331,6 @@ nav.scrolled {
   animation: fadeUp 0.9s 2.2s forwards;
 }
 
-/* Typing cursor */
 .type-cursor {
   display: inline-block;
   width: 2px; height: 1em;
@@ -419,7 +416,6 @@ nav.scrolled {
   box-shadow: 0 0 20px rgba(200,165,90,0.1);
 }
 
-/* scroll indicator */
 .hero-scroll {
   position: absolute;
   bottom: 2.5rem;
@@ -522,7 +518,6 @@ section { position: relative; z-index: 1; }
   margin: 0 auto;
 }
 
-/* Photo */
 .about-photo-zone { position: relative; display: flex; justify-content: center; }
 
 .photo-hex {
@@ -583,7 +578,6 @@ section { position: relative; z-index: 1; }
   padding: 0.5rem 1rem;
 }
 
-/* About text */
 .about-content h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
@@ -624,6 +618,136 @@ section { position: relative; z-index: 1; }
   border-color: var(--gold);
   background: rgba(200,165,90,0.08);
   box-shadow: 0 0 16px rgba(200,165,90,0.08);
+}
+
+/* ═══════════════════════════════════════
+   EDUCATION
+═══════════════════════════════════════ */
+#education { background: var(--dark-2); }
+#education::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 45%;
+  background: radial-gradient(ellipse at left center, rgba(200,165,90,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.edu-timeline {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.edu-timeline::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), rgba(200,165,90,0.06));
+}
+
+.edu-item {
+  display: flex;
+  gap: 2.2rem;
+  margin-bottom: 2.4rem;
+  position: relative;
+}
+
+.edu-dot-wrap {
+  flex-shrink: 0;
+  width: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edu-dot {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--dark-2);
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 0 12px rgba(200,165,90,0.3), 0 0 24px rgba(200,165,90,0.1);
+  position: relative;
+  z-index: 1;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+.edu-dot::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold-bright);
+}
+
+.edu-card {
+  flex: 1;
+  background: rgba(17,24,39,0.7);
+  border: 1px solid var(--border);
+  padding: 1.6rem 1.8rem;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.edu-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(200,165,90,0.04) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.edu-card:hover {
+  border-color: rgba(200,165,90,0.38);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 32px rgba(200,165,90,0.07);
+  transform: translateX(6px);
+}
+.edu-card:hover::before { opacity: 1; }
+
+.edu-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.55rem;
+  flex-wrap: wrap;
+}
+.edu-year {
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(200,165,90,0.08);
+  border: 1px solid rgba(200,165,90,0.2);
+  padding: 0.25rem 0.7rem;
+}
+.edu-level {
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.edu-school {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.01em;
+}
+.edu-loc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.edu-loc::before {
+  content: '';
+  display: inline-block;
+  width: 14px; height: 1px;
+  background: rgba(200,165,90,0.3);
 }
 
 /* ═══════════════════════════════════════
@@ -672,7 +796,6 @@ section { position: relative; z-index: 1; }
 }
 .proj-thumb-1 { background: linear-gradient(135deg, #070B14 0%, #0F1E3A 100%); }
 .proj-thumb-2 { background: linear-gradient(135deg, #0A0F07 0%, #162B10 100%); }
-.proj-thumb-3 { background: linear-gradient(135deg, #070B14 0%, #0F1E3A 100%); }
 
 .proj-image {
   position: absolute;
@@ -681,9 +804,7 @@ section { position: relative; z-index: 1; }
   object-fit: cover;
   z-index: 1;
 }
-
 .proj-thumb-icon { position: relative; z-index: 3; }
-
 .proj-thumb::after {
   content: '';
   position: absolute;
@@ -809,7 +930,6 @@ section { position: relative; z-index: 1; }
   position: relative;
   transition: width 1.6s cubic-bezier(0.16,1,0.3,1);
 }
-/* shimmer sweep */
 .skill-fill::after {
   content: '';
   position: absolute;
@@ -833,7 +953,6 @@ section { position: relative; z-index: 1; }
   box-shadow: 0 0 8px var(--gold-bright), 0 0 16px rgba(232,201,122,0.4);
 }
 
-/* Tech icon grid */
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -917,10 +1036,7 @@ section { position: relative; z-index: 1; }
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-
-.doc-card:hover .doc-image {
-  transform: scale(1.05);
-}
+.doc-card:hover .doc-image { transform: scale(1.05); }
 
 .doc-title {
   font-family: 'Playfair Display', serif;
@@ -929,14 +1045,12 @@ section { position: relative; z-index: 1; }
   color: var(--text);
   margin-bottom: 0.8rem;
 }
-
 .doc-desc {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
-
 .doc-link {
   display: inline-flex;
   align-items: center;
@@ -951,6 +1065,68 @@ section { position: relative; z-index: 1; }
   transition: border-color 0.3s, gap 0.3s;
 }
 .doc-link:hover { border-color: var(--gold); gap: 0.7rem; }
+
+.gallery-wrap {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gallery-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.gallery-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(200,165,90,0.25);
+  background: rgba(6,8,14,0.8);
+  color: var(--text);
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  cursor: none;
+  transition: all 0.3s ease;
+}
+.gallery-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.gallery-slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 360px);
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.4rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  touch-action: pan-x;
+}
+.gallery-slider.dragging { cursor: grabbing; }
+.gallery-slider::-webkit-scrollbar { display: none; }
+.gallery-item {
+  scroll-snap-align: start;
+  background: rgba(17,24,39,0.8);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 420px;
+  transition: transform 0.35s ease;
+}
+.gallery-item:hover { transform: translateY(-6px); }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* ═══════════════════════════════════════
    CONTACT
@@ -995,6 +1171,7 @@ section { position: relative; z-index: 1; }
   margin-bottom: 1rem;
   font-size: 0.85rem;
   color: var(--text-muted);
+  justify-content: center;
 }
 .contact-detail-icon {
   width: 34px; height: 34px;
@@ -1025,92 +1202,6 @@ section { position: relative; z-index: 1; }
   transform: translateY(-2px);
 }
 
-/* Form */
-.glass-form {
-  background: rgba(17,24,39,0.5);
-  border: 1px solid var(--border);
-  padding: 2.5rem;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-
-.form-group { margin-bottom: 1.4rem; }
-.form-label {
-  display: block;
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold-dim);
-  margin-bottom: 0.55rem;
-}
-.form-input,
-.form-textarea {
-  width: 100%;
-  background: rgba(6,8,14,0.6);
-  border: 1px solid rgba(200,165,90,0.12);
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 300;
-  padding: 0.85rem 1rem;
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  resize: none;
-}
-.form-input::placeholder,
-.form-textarea::placeholder { color: rgba(122,139,166,0.5); }
-.form-input:focus,
-.form-textarea:focus {
-  border-color: rgba(200,165,90,0.45);
-  box-shadow: 0 0 0 1px rgba(200,165,90,0.1);
-}
-.form-textarea { height: 120px; }
-
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-.submit-btn {
-  width: 100%;
-  padding: 1rem;
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
-  color: var(--dark);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  border: none;
-  cursor: none;
-  margin-top: 0.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.submit-btn::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transform: skewX(-15deg);
-  transition: left 0.6s ease;
-}
-.submit-btn:hover::before { left: 140%; }
-.submit-btn:hover {
-  box-shadow: 0 0 30px rgba(200,165,90,0.3);
-  transform: translateY(-1px);
-}
-
-.form-success {
-  display: none;
-  text-align: center;
-  padding: 0.9rem;
-  margin-top: 0.8rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  color: var(--gold);
-  border: 1px solid rgba(200,165,90,0.2);
-  background: rgba(200,165,90,0.04);
-}
-
 /* ═══════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════ */
@@ -1133,6 +1224,48 @@ footer strong { color: var(--gold); font-weight: 400; }
   from { opacity:0; transform:translateY(22px); }
   to   { opacity:1; transform:translateY(0); }
 }
+@keyframes fadeInScale {
+  from { opacity:0; transform:scale(0.95) translateY(20px); }
+  to   { opacity:1; transform:scale(1) translateY(0); }
+}
+@keyframes slideInLeft {
+  from { opacity:0; transform:translateX(-60px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity:0; transform:translateX(60px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes slideInUp {
+  from { opacity:0; transform:translateY(60px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes slideInDown {
+  from { opacity:0; transform:translateY(-60px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Elemen dengan animasi entrance */
+.anim-entry {
+  opacity: 0;
+  animation: slideInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.anim-entry.delay-1 { animation-delay: 0.1s; }
+.anim-entry.delay-2 { animation-delay: 0.2s; }
+.anim-entry.delay-3 { animation-delay: 0.3s; }
+.anim-entry.delay-4 { animation-delay: 0.4s; }
+.anim-entry.delay-5 { animation-delay: 0.5s; }
+
+.anim-entry.from-left { animation-name: slideInLeft; }
+.anim-entry.from-right { animation-name: slideInRight; }
+.anim-entry.from-down { animation-name: slideInDown; }
+
+section { 
+  opacity: 0;
+  animation: fadeInScale 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+section.visible { opacity: 1; }
+.section-inner { position: relative; z-index: 1; }
 
 /* ═══════════════════════════════════════
    RESPONSIVE
@@ -1150,17 +1283,17 @@ footer strong { color: var(--gold); font-weight: 400; }
   .nav-links { display: none; }
   .ham { display: flex; }
   .hero-cta { flex-direction: column; align-items: center; }
-  .form-row { grid-template-columns: 1fr; }
   .tech-grid { grid-template-columns: repeat(4, 1fr); }
   .section-inner { padding: 5rem 5%; }
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
+  .edu-timeline::before { left: 20px; }
 }
 
 @media (max-width: 480px) {
   .tech-grid { grid-template-columns: repeat(3, 1fr); }
   .proj-grid { grid-template-columns: 1fr; }
-  .glass-form { padding: 1.8rem 1.2rem; }
+  .edu-item { gap: 1.4rem; }
 }
 </style>
 </head>
@@ -1185,6 +1318,7 @@ footer strong { color: var(--gold); font-weight: 400; }
   <ul class="nav-links">
     <li><a href="#home">Beranda</a></li>
     <li><a href="#about">Tentang</a></li>
+    <li><a href="#education">Pendidikan</a></li>
     <li><a href="#projects">Proyek</a></li>
     <li><a href="#skills">Keahlian</a></li>
     <li><a href="#dokumentasi">Dokumentasi</a></li>
@@ -1199,6 +1333,7 @@ footer strong { color: var(--gold); font-weight: 400; }
 <div class="mob-menu" id="mobMenu">
   <a href="#home" onclick="closeMenu()">Beranda</a>
   <a href="#about" onclick="closeMenu()">Tentang</a>
+  <a href="#education" onclick="closeMenu()">Pendidikan</a>
   <a href="#projects" onclick="closeMenu()">Proyek</a>
   <a href="#skills" onclick="closeMenu()">Keahlian</a>
   <a href="#dokumentasi" onclick="closeMenu()">Dokumentasi</a>
@@ -1223,6 +1358,10 @@ footer strong { color: var(--gold); font-weight: 400; }
       <a href="#contact" class="btn-ghost">Mari Berkolaborasi</a>
     </div>
   </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-track"></div>
+  </div>
 </section>
 
 <!-- ══ ABOUT ══ -->
@@ -1241,7 +1380,7 @@ footer strong { color: var(--gold); font-weight: 400; }
         <div class="photo-hex">
           <div class="photo-hex-border"></div>
           <div class="photo-hex-inner" id="profilePhotoContainer" style="cursor: pointer;">
-            <img src="images/foto.jpg" id="profilePhoto" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+            <img src="images/foto5.jpeg" id="profilePhoto" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
             <span id="profilePlaceholder" style="display:none;">DR</span>
           </div>
           <input type="file" id="photoInput" accept="image/*" style="display:none;" />
@@ -1253,7 +1392,7 @@ footer strong { color: var(--gold); font-weight: 400; }
         <div class="reveal">
           <h3>Dian Ramadani</h3>
           <p class="about-role">Mahasiswa Informatika &amp; Web Developer</p>
-          <p>Saya adalah mahasiswa Informatika Universitas Jabal Ghafur Yang Tertarik untuk menciptakan pengalaman digital premium. Saya percaya bahwa desain yang baik dan kode yang bersih bukanlah hal yang mutually exclusive — mereka tidak terpisahkan.</p>
+          <p>Saya adalah mahasiswa Informatika Universitas Jabal Ghafur yang tertarik untuk menciptakan pengalaman digital premium. Saya percaya bahwa desain yang baik dan kode yang bersih bukanlah hal yang mutually exclusive — mereka tidak terpisahkan.</p>
           <p>Pendekatan saya menggabungkan pemikiran analitis dengan visi kreatif, menghasilkan antarmuka yang tidak hanya indah tetapi juga performan, dapat diakses, dan bermakna.</p>
           <div class="about-tags">
             <span class="about-tag">Desain UI / UX</span>
@@ -1264,6 +1403,59 @@ footer strong { color: var(--gold); font-weight: 400; }
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EDUCATION ══ -->
+<section id="education">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="sec-label">✦ Riwayat Pendidikan</span>
+      <h2 class="sec-title">Pendidikan</h2>
+      <div class="sec-divider">
+        <div class="sec-divider-line"></div>
+        <div class="sec-divider-dot"></div>
+      </div>
+    </div>
+    <div class="edu-timeline">
+
+      <div class="edu-item reveal">
+        <div class="edu-dot-wrap"><div class="edu-dot"></div></div>
+        <div class="edu-card">
+          <div class="edu-meta">
+            <span class="edu-year">2014 – 2020</span>
+            <span class="edu-level">Sekolah Dasar</span>
+          </div>
+          <div class="edu-school">SDN 3 Pidie</div>
+          <div class="edu-loc">Pidie, Aceh</div>
+        </div>
+      </div>
+
+      <div class="edu-item reveal reveal-delay-1">
+        <div class="edu-dot-wrap"><div class="edu-dot"></div></div>
+        <div class="edu-card">
+          <div class="edu-meta">
+            <span class="edu-year">2020 – 2023</span>
+            <span class="edu-level">Madrasah Tsanawiyah</span>
+          </div>
+          <div class="edu-school">MTsN 5 Pidie</div>
+          <div class="edu-loc">Pidie, Aceh</div>
+        </div>
+      </div>
+
+      <div class="edu-item reveal reveal-delay-2">
+        <div class="edu-dot-wrap"><div class="edu-dot"></div></div>
+        <div class="edu-card">
+          <div class="edu-meta">
+            <span class="edu-year">2023 – 2024</span>
+            <span class="edu-level">Sekolah Menengah Atas</span>
+          </div>
+          <div class="edu-school">SMAN Unggul Sigli</div>
+          <div class="edu-loc">Sigli, Pidie, Aceh</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1299,14 +1491,14 @@ footer strong { color: var(--gold); font-weight: 400; }
         </div>
       </div>
 
-            <div class="proj-card reveal reveal-delay-1">
+      <div class="proj-card reveal reveal-delay-2">
         <div class="proj-thumb proj-thumb-1">
           <img src="images/web_ojek.jpg" alt="Web Transportasi Project" class="proj-image" />
           <span class="proj-thumb-icon">🚕</span>
           <span class="proj-chip">Transportasi</span>
         </div>
         <div class="proj-body">
-          <h3 class="proj-title">Web transportasi online</h3>
+          <h3 class="proj-title">Web Transportasi Online</h3>
           <p class="proj-desc">Platform untuk memesan transportasi online dengan antarmuka yang mudah digunakan.</p>
           <div class="proj-stack">
             <span class="stack-tag">React</span>
@@ -1316,10 +1508,7 @@ footer strong { color: var(--gold); font-weight: 400; }
           </div>
           <a href="https://dianramadani0906-ops.github.io/ojol/" target="_blank" class="proj-link">Lihat Detail →</a>
         </div>
-      */
-
-
-
+      </div>
 
     </div>
   </div>
@@ -1399,33 +1588,24 @@ footer strong { color: var(--gold); font-weight: 400; }
         <div class="sec-divider-dot"></div>
       </div>
     </div>
-    <div class="doc-grid">
-      <div class="doc-card reveal reveal-delay-1">
-        <div class="doc-image" style="background-image: url('images/foto.jpg'); background-size: cover; background-position: center; width: 100%; height: 200px; border-radius: 8px;"></div>
-        <h3 class="doc-title">Depan Halaman</h3>
-        <p class="doc-desc">Dokumentasi di depan halaman kampus.</p>
-        <a href="images/foto.jpg" target="_blank" class="doc-link">Lihat Galeri →</a>
+    <div class="gallery-wrap reveal">
+      <div class="gallery-actions">
+        <button class="gallery-btn prev-btn" aria-label="Sebelumnya">‹</button>
+        <button class="gallery-btn next-btn" aria-label="Berikutnya">›</button>
       </div>
-
-      <div class="doc-card reveal reveal-delay-2">
-        <div class="doc-image" style="background-image: url('images/foto1.jpg'); background-size: cover; background-position: center; width: 100%; height: 200px; border-radius: 8px;"></div>
-        <h3 class="doc-title">Berpergian</h3>
-        <p class="doc-desc">Dokumentasi saat ingin mengerjakan project dengan teman.</p>
-        <a href="images/foto1.jpg" target="_blank" class="doc-link">Lihat Galeri →</a>
-      </div>
-
-      <div class="doc-card reveal reveal-delay-3">
-        <div class="doc-image" style="background-image: url('images/foto2.jpg'); background-size: cover; background-position: center; width: 100%; height: 200px; border-radius: 8px;"></div>
-        <h3 class="doc-title">Di cafe</h3>
-        <p class="doc-desc">Dokumentasi saat berada di cafe untuk mengerjakan project.</p>
-        <a href="images/foto2.jpg" target="_blank" class="doc-link">Lihat Galeri →</a>
-      </div>
-
-      <div class="doc-card reveal reveal-delay-4">
-        <div class="doc-image" style="background-image: url('images/foto3.jpg'); background-size: cover; background-position: center; width: 100%; height: 200px; border-radius: 8px;"></div>
-        <h3 class="doc-title">Halaman Kampus</h3>
-        <p class="doc-desc">Dokumentasi di halaman kampus.</p>
-        <a href="images/foto3.jpg" target="_blank" class="doc-link">Lihat Galeri →</a>
+      <div class="gallery-slider" id="gallerySlider">
+        <div class="gallery-item"><img src="images/foto4.jpeg" alt="Galeri Foto 1" /></div>
+        <div class="gallery-item"><img src="images/foto5.jpeg" alt="Galeri Foto 2" /></div>
+        <div class="gallery-item"><img src="images/foto2.jpg" alt="Galeri Foto 3" /></div>
+        <div class="gallery-item"><img src="images/foto3.jpg" alt="Galeri Foto 4" /></div>
+        <div class="gallery-item"><img src="images/foto6.jpeg" alt="Galeri Foto 5" /></div>
+        <div class="gallery-item"><img src="images/foto7.jpeg" alt="Galeri Foto 6" /></div>
+        <div class="gallery-item"><img src="images/foto8.jpeg" alt="Galeri Foto 7" /></div>
+        <div class="gallery-item"><img src="images/foto9.jpeg" alt="Galeri Foto 8" /></div>
+        <div class="gallery-item"><img src="images/foto10.jpeg" alt="Galeri Foto 9" /></div>
+        <div class="gallery-item"><img src="images/foto11.jpeg" alt="Galeri Foto 10" /></div>
+        <div class="gallery-item"><img src="images/foto12.jpeg" alt="Galeri Foto 11" /></div>
+        <div class="gallery-item"><img src="images/foto13.jpeg" alt="Galeri Foto 12" /></div>
       </div>
     </div>
   </div>
@@ -1445,17 +1625,18 @@ footer strong { color: var(--gold); font-weight: 400; }
     <div class="contact-layout">
       <div class="reveal">
         <h3>Mari Ciptakan Sesuatu<br>yang Luar Biasa</h3>
-        <p>Apakah Anda Ingin Berkolaborasi, pertanyaan, atau hanya ingin terhubung? Saya selalu terbuka untuk percakapan bermakna dan kolaborasi.</p>
+        <p>Apakah Anda ingin berkolaborasi, ada pertanyaan, atau hanya ingin terhubung? Saya selalu terbuka untuk percakapan bermakna dan kolaborasi.</p>
         <div class="contact-detail"><div class="contact-detail-icon">✉</div><span>dianramadani@gmail.com</span></div>
         <div class="contact-detail"><div class="contact-detail-icon">⏰</div><span>Sen – Jum, 9am – 6pm WIB</span></div>
         <div class="socials">
           <a href="https://github.com" target="_blank" class="social-btn" title="GitHub">⚡</a>
           <a href="https://linkedin.com" target="_blank" class="social-btn" title="LinkedIn">💼</a>
           <a href="https://twitter.com" target="_blank" class="social-btn" title="Twitter">🐦</a>
-          <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram">📷</a>
+          <a href="https://www.instagram.com/dianrramadhani?igsh=MTEzczd3dHp2bWJuNA==" target="_blank" class="social-btn" title="Instagram">📷</a>
         </div>
       </div>
     </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -1483,7 +1664,6 @@ function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
-
 function initStars() {
   stars = [];
   for (let i = 0; i < 140; i++) {
@@ -1497,7 +1677,6 @@ function initStars() {
     });
   }
 }
-
 function drawStars(t) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   stars.forEach(s => {
@@ -1509,7 +1688,6 @@ function drawStars(t) {
   });
   requestAnimationFrame(drawStars);
 }
-
 resizeCanvas(); initStars(); drawStars(0);
 window.addEventListener('resize', () => { resizeCanvas(); initStars(); });
 
@@ -1517,9 +1695,7 @@ window.addEventListener('resize', () => { resizeCanvas(); initStars(); });
 const dot  = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
-
 document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-
 function animCursor() {
   rx += (mx - rx) * 0.15;
   ry += (my - ry) * 0.15;
@@ -1553,7 +1729,6 @@ function closeMenu() {
 const phrases = ['Web Developer', 'Mahasiswa Informatika', 'Penggemar UI/UX', 'Problem Solver'];
 let pi = 0, ci = 0, deleting = false, txt = '';
 const el = document.getElementById('typed-text');
-
 function type() {
   const full = phrases[pi];
   if (!deleting) {
@@ -1604,10 +1779,7 @@ const profilePhoto = document.getElementById('profilePhoto');
 const photoInput = document.getElementById('photoInput');
 const profilePlaceholder = document.getElementById('profilePlaceholder');
 
-profileContainer.addEventListener('click', () => {
-  photoInput.click();
-});
-
+profileContainer.addEventListener('click', () => { photoInput.click(); });
 photoInput.addEventListener('change', function(e) {
   const file = e.target.files[0];
   if (file) {
@@ -1616,14 +1788,12 @@ photoInput.addEventListener('change', function(e) {
       profilePhoto.src = event.target.result;
       profilePhoto.style.display = 'block';
       profilePlaceholder.style.display = 'none';
-      // Simpan ke localStorage agar tetap tersimpan
       localStorage.setItem('profilePhoto', event.target.result);
     };
     reader.readAsDataURL(file);
   }
 });
 
-// Load profile photo dari localStorage saat halaman dimuat
 window.addEventListener('load', () => {
   const savedPhoto = localStorage.getItem('profilePhoto');
   if (savedPhoto) {
@@ -1631,29 +1801,121 @@ window.addEventListener('load', () => {
     profilePhoto.style.display = 'block';
     profilePlaceholder.style.display = 'none';
   } else {
-    // Jika tidak ada saved photo, tetap tampilkan foto dari path
     profilePhoto.style.display = 'block';
     profilePlaceholder.style.display = 'none';
   }
 });
 
-/* ── CONTACT FORM ── */
-document.getElementById('cForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('.submit-btn');
-  btn.textContent = '✦ Sending… ✦';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = '✦ Sent! ✦';
-    document.getElementById('fSuccess').style.display = 'block';
-    this.reset();
-    setTimeout(() => {
-      btn.textContent = '✦ Send Message ✦';
-      btn.disabled = false;
-      document.getElementById('fSuccess').style.display = 'none';
-    }, 4500);
-  }, 1500);
+/* ── SECTION ENTRANCE ANIMATIONS ── */
+const allSections = document.querySelectorAll('section[id]');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const sectionId = entry.target.id;
+      entry.target.classList.add('visible');
+      
+      // Trigger staggered animations for elements in this section
+      const cards = entry.target.querySelectorAll('.proj-card, .edu-card, .edu-item, .tech-card, .doc-card, .about-grid > div, .skill-item, .gallery-item, .contact-layout > div');
+      cards.forEach((card, index) => {
+        card.classList.add('anim-entry');
+        
+        // Alternate animation directions
+        if (index % 3 === 0) card.classList.add('from-left');
+        else if (index % 3 === 1) card.classList.add('from-down');
+        else card.classList.add('from-right');
+        
+        // Add staggered delay
+        const delay = Math.min(index * 0.1, 0.5);
+        card.style.animationDelay = delay + 's';
+      });
+      
+      // Animate section title and dividers
+      const reveals = entry.target.querySelectorAll('.reveal');
+      reveals.forEach((el, index) => {
+        if (!el.classList.contains('in')) {
+          el.classList.add('anim-entry');
+          el.style.animationDelay = (index * 0.15) + 's';
+          setTimeout(() => el.classList.add('in'), 50);
+        }
+      });
+    }
+  });
+}, { threshold: 0.08 });
+
+allSections.forEach(section => {
+  sectionObserver.observe(section);
 });
+
+/* ── NAVIGATE TO SECTION WITH ANIMATION ── */
+document.querySelectorAll('.nav-links a, .mob-menu a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href.startsWith('#')) {
+      const targetSection = document.querySelector(href);
+      if (targetSection) {
+        e.preventDefault();
+        setTimeout(() => {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  });
+});
+const gallerySlider = document.getElementById('gallerySlider');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+if (gallerySlider) {
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  gallerySlider.addEventListener('mousedown', e => {
+    isDown = true;
+    gallerySlider.classList.add('dragging');
+    startX = e.pageX - gallerySlider.offsetLeft;
+    scrollLeft = gallerySlider.scrollLeft;
+  });
+
+  gallerySlider.addEventListener('mouseleave', () => {
+    isDown = false;
+    gallerySlider.classList.remove('dragging');
+  });
+
+  gallerySlider.addEventListener('mouseup', () => {
+    isDown = false;
+    gallerySlider.classList.remove('dragging');
+  });
+
+  gallerySlider.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - gallerySlider.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    gallerySlider.scrollLeft = scrollLeft - walk;
+  });
+
+  gallerySlider.addEventListener('touchstart', e => {
+    startX = e.touches[0].pageX - gallerySlider.offsetLeft;
+    scrollLeft = gallerySlider.scrollLeft;
+  });
+
+  gallerySlider.addEventListener('touchmove', e => {
+    const x = e.touches[0].pageX - gallerySlider.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    gallerySlider.scrollLeft = scrollLeft - walk;
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      gallerySlider.scrollBy({ left: -gallerySlider.clientWidth, behavior: 'smooth' });
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      gallerySlider.scrollBy({ left: gallerySlider.clientWidth, behavior: 'smooth' });
+    });
+  }
+}
 </script>
 </body>
 </html>
